@@ -34,3 +34,18 @@ In order to access all of the
 * ``folders`` - this function scrapes information from the ``_data`` and ``_posts`` folder on Jekyll pages.  Folders can be added and removed as an optional argument.  This is useful when extending [Jekyll Collections](jekyllrb.com/docs/collections/)
 
 ### ``.ghcred`` for Authentication
+
+Github limits the number of unauthenticated calls that can be made to the API (60 requests/ hour ).  5000 requests/hour can be made with [authenticated requests](https://developer.github.com/v3/#increasing-the-unauthenticated-rate-limit-for-oauth-applications).
+
+To make autheticated requests:
+
+1. Request a Github Developer Application for this function to get an API and secret key.
+2. Make a new file called ``.ghauth``
+3. Modify ``xxxx`` and ``yyyy`` string and at it to ``.ghauth``
+
+```
+?client_id=xxxx&client_secret=yyyy
+```
+
+
+> See more a [Github Developer](https://developer.github.com/v3/#rate-limiting)
