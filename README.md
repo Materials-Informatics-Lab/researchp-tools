@@ -21,4 +21,16 @@ Clone the Matlab tools with the following command
 git clone -b matlab https://github.com/Materials-Informatics-Lab/researchp-tools.git
 ```
 
-# Accessing De-serialized Content Locally
+## Accessing De-serialized Content Locally
+
+``ResearchPages`` is a matlab function to access Github pages content.  
+
+In order to access all of the 
+
+### Research Pages Options
+
+* ``branch`` - Change the branch that is accessing the files.  ``gh-pages`` is the default; if the repository is a Github Pages username domain then the branch needs to be explicitly defined as ``master``.  Any branch can be accessed as long as it exists.
+* ``SHA`` - Access Github pages information from a prior commit
+* ``folders`` - this function scrapes information from the ``_data`` and ``_posts`` folder on Jekyll pages.  Folders can be added and removed as an optional argument.  This is useful when extending [Jekyll Collections](jekyllrb.com/docs/collections/)
+
+### ``.ghcred`` for Authentication
