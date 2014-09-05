@@ -25,7 +25,7 @@ git clone -b matlab https://github.com/Materials-Informatics-Lab/researchp-tools
 
 ``ResearchPages`` is a matlab function to access Github pages content.  
 
-In order to access all of the 
+> See [``example.m``](https://github.com/Materials-Informatics-Lab/researchp-tools/blob/matlab/example.m) for usage.
 
 ### Research Pages Options
 
