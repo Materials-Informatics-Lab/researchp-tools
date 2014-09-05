@@ -5,7 +5,8 @@ function data = ResearchPages( username, reponame, varargin )
 %
 % 'SHA' - access information from a different version
 % 'folders' - ``gh-pages`` directories to access
-%
+% 'branch' - change from the default ``gh-pages`` branch (e.g. ``master``)
+% 
 % .ghauth file
 
 %% Github API Requests
