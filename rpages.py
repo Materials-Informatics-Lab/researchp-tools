@@ -26,11 +26,16 @@ def github( url, service = '' ):
                     force_json=True, typ = 'frame', show_url=True )
 
     elif '/blob/' in url or service =='blob' or service == 'fm':
+        import frontmatter
+        import urllib2
         url = url.replace( '/blob','')
         parsed = urlsplit( url )
         parsed = parsed._replace(netloc='raw.githubusercontent.com')
+
         if service == 'fm':
-            data = frontmatter.load(n).metadata
+            page = urllib2.urlopen(parsed.geturl())
+            data = frontmatter.load(page).metadata
+            page.close()
         else:
             data = req_to_pd( parsed.geturl() )
 
@@ -59,4 +64,8 @@ def req_to_pd( url , typ='series', force_json=False, show_url=False, has_fm=Fals
     else:
         data = s.text
 
+    return data
+
+def noembed( url ):
+    data = req_to_pd( "http://noembed.com/embed?url=" + url, force_json=True )
     return data
